@@ -17,9 +17,12 @@ namespace Kincskereso
         public int Kincsekcsount { get; set; }
         public int Lepescount{ get; set; }
 
+        public Resources anyagok { get; set; }
+
         public Player(Point pos)
         {
             traversed = new bool[5];
+            anyagok = new Resources();
         }
     }
 }

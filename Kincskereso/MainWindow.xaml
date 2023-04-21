@@ -57,7 +57,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Image Source="/wood-background-.png" Grid.Row="0" Grid.Column="0" Stretch="Fill"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding} " Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/iron.jpg" Grid.Row="0" Grid.Column="1" Stretch="Fill"/>
             <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/clay-.png" Grid.Row="0" Grid.Column="2" Stretch="Fill"/>
