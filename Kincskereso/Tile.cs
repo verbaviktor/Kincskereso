@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kincskereso
 {
-    internal class Tile
+    public class Tile
     {
-        TileType Type;
-        bool[] Direction = new bool[4];
+        public TileType Type;
+        public bool[] Direction = new bool[4];
 
         public Tile(TileType type)
         {
