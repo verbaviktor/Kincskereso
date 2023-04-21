@@ -9,15 +9,15 @@ using System.Windows.Media;
 
 namespace Kincskereso
 {
-    internal class Tools
+    internal class Tool
     {
         static public bool CreateAso (Resources anyagok, Player player)
         {
-            if (anyagok.resources[TileType.Hegy] <= 1 && anyagok.resources[TileType.Erdő] <= 1)
+            if (anyagok.resources[TileType.Hegy] <= 1 && anyagok.resources[TileType.Erdo] <= 1)
             {
                 player.Asocount += 1;
                 anyagok.Remove_resource(TileType.Hegy);
-                anyagok.Remove_resource(TileType.Erdő);
+                anyagok.Remove_resource(TileType.Erdo);
                 return true;
 
             }
@@ -27,11 +27,11 @@ namespace Kincskereso
 
         static public bool CreateUt(Resources anyagok, Player player)
         {
-            if (anyagok.resources[TileType.Domb] <= 1 && anyagok.resources[TileType.Erdő] <= 1)
+            if (anyagok.resources[TileType.Domb] <= 1 && anyagok.resources[TileType.Erdo] <= 1)
             {
                 player.Asocount += 1;
                 anyagok.Remove_resource(TileType.Domb);
-                anyagok.Remove_resource(TileType.Erdő);
+                anyagok.Remove_resource(TileType.Erdo);
                 return true;
 
             }

@@ -31,6 +31,8 @@ namespace Kincskereso
             [TileType.Erdo] = Brushes.DarkGreen
         };
 
+        internal bool GameStarted;
+
         internal static Random randomGenerator = new();
         public MainWindow()
         {

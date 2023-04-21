@@ -15,7 +15,7 @@ namespace Kincskereso
         public Resources()
         {
             resources = new Dictionary<TileType, int> {
-                {TileType.Erdő, 3 },
+                {TileType.Erdo, 3 },
                 {TileType.Hegy, 3 },
                 {TileType.Domb, 3 },
                 {TileType.Ret, 0 },
