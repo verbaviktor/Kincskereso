@@ -56,22 +56,21 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="" Grid.Row="0" Grid.Column="0"/>
+            <Image Source="/wood-background-.png" Grid.Row="0" Grid.Column="0" Stretch="Fill"/>
             <Label Content="{Binding}" Grid.Row="0" Grid.Column="0"/>
-            <Image Source="" Grid.Row="0" Grid.Column="1"/>
+            <Image Source="/iron.jpg" Grid.Row="0" Grid.Column="1" Stretch="Fill"/>
             <Label Content="{Binding}" Grid.Row="0" Grid.Column="1"/>
-            <Image Source="" Grid.Row="0" Grid.Column="2"/>
+            <Image Source="/clay-.png" Grid.Row="0" Grid.Column="2" Stretch="Fill"/>
             <Label Content="{Binding}" Grid.Row="0" Grid.Column="2"/>
-            <Image Source="" Grid.Row="1" Grid.Column="0"/>
+            <Image Source="/road.png" Grid.Row="1" Grid.Column="0" Stretch="Uniform"/>
             <Label Content="{Binding}" Grid.Row="1" Grid.Column="0"/>
-            <Image Source="" Grid.Row="1" Grid.Column="1"/>
+            <Image Source="/shovel.png" Grid.Row="1" Grid.Column="1"/>
             <Label Content="{Binding}" Grid.Row="1" Grid.Column="1"/>
-            <Image Source="" Grid.Row="2" Grid.Column="0"/>
+            <Image Source="trasure chest.png" Grid.Row="2" Grid.Column="0"/>
             <Label Content="{Binding}" Grid.Row="2" Grid.Column="0"/>
-            <Image Source="" Grid.Row="0" Grid.Column="0"/>
             <Label Content="Lépések" Grid.Row="2" Grid.Column="1"/>
             <Label Content="{Binding}" Grid.Row="2" Grid.Column="1"/>
-            <Button x:Name="dice" Click="dice" Grid.Row="2" Grid.Column="2">
+            <Button x:Name="dice" Click="Dice" Grid.Row="2" Grid.Column="2" Background="Transparent">
                 <Image Source=""/>
             </Button>
         </Grid>
