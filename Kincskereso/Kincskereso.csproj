@@ -7,4 +7,45 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="clay-.png" />
+    <None Remove="highway.jpg" />
+    <None Remove="img\clay-.png" />
+    <None Remove="img\iron.jpg" />
+    <None Remove="img\shovel.png" />
+    <None Remove="img\trasure chest.png" />
+    <None Remove="img\wood-background-.png" />
+    <None Remove="iron.jpg" />
+    <None Remove="road.png" />
+    <None Remove="shovel.png" />
+    <None Remove="trasure chest.png" />
+    <None Remove="wood-background-.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="clay-.png" />
+    <Resource Include="img\clay-.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\iron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\shovel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\trasure chest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\wood-background-.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="iron.jpg" />
+    <Resource Include="road.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="shovel.png" />
+    <Resource Include="trasure chest.png" />
+    <Resource Include="wood-background-.png" />
+  </ItemGroup>
+
 </Project>

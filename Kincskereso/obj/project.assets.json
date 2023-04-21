@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\csizmadia.barnabas\\.nuget\\packages\\": {},
+    "C:\\Users\\varga.mate.gellert\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\csizmadia.barnabas\\Documents\\asdasd\\Kincskereso\\Kincskereso.csproj",
+      "projectUniqueName": "Z:\\11. évf._2022-2023\\WPF\\Kincskereso\\Kincskereso\\Kincskereso.csproj",
       "projectName": "Kincskereso",
-      "projectPath": "C:\\Users\\csizmadia.barnabas\\Documents\\asdasd\\Kincskereso\\Kincskereso.csproj",
-      "packagesPath": "C:\\Users\\csizmadia.barnabas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\csizmadia.barnabas\\Documents\\asdasd\\Kincskereso\\obj\\",
+      "projectPath": "Z:\\11. évf._2022-2023\\WPF\\Kincskereso\\Kincskereso\\Kincskereso.csproj",
+      "packagesPath": "C:\\Users\\varga.mate.gellert\\.nuget\\packages\\",
+      "outputPath": "Z:\\11. évf._2022-2023\\WPF\\Kincskereso\\Kincskereso\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\csizmadia.barnabas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\varga.mate.gellert\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

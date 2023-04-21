@@ -1,21 +1,21 @@
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.exe
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.deps.json
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.runtimeconfig.json
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.dll
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.pdb
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.AssemblyReference.cache
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.cache
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.lref
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.g.resources
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfoInputs.cache
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfo.cs
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.CoreCompileInputs.cache
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.dll
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\refint\Kincskereso.dll
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.pdb
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.genruntimeconfig.cache
-C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\ref\Kincskereso.dll
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.exe
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.deps.json
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.runtimeconfig.json
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.dll
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.pdb
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.AssemblyReference.cache
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.g.cs
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\App.g.cs
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.cache
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.lref
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.baml
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.g.resources
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.GeneratedMSBuildEditorConfig.editorconfig
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfoInputs.cache
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfo.cs
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.CoreCompileInputs.cache
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.dll
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\refint\Kincskereso.dll
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.pdb
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.genruntimeconfig.cache
+Z:\11. évf._2022-2023\WPF\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\ref\Kincskereso.dll
