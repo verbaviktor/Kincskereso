@@ -40,10 +40,10 @@ namespace Kincskereso
         void Feltolt()
         {
             tiles = new Tile[8, 8];
-            tiles[0, 0] = new Tile(0);
-            tiles[7, 0] = new Tile(0);
-            tiles[7, 7] = new Tile(0);
-            tiles[0, 7] = new Tile(0);
+            AddNewGrid(TileType.Sarok, 0, 0);
+            AddNewGrid(TileType.Sarok, 7, 0);
+            AddNewGrid(TileType.Sarok, 7, 7);
+            AddNewGrid(TileType.Sarok, 0, 7);
             int RetCount = 0;
             for (int x = 0; x < 8; x++)
             {
@@ -63,7 +63,7 @@ namespace Kincskereso
                             //RetCount++;
                         }
                     }
-                    AddNewGrid(type, x, y);
+                    AddNewGrid((TileType)type, x, y);
                     
                 }
             }
@@ -79,7 +79,7 @@ namespace Kincskereso
                 {
                     continue;
                 }
-                AddNewGrid(1, x, y);
+                AddNewGrid(TileType.Ret, x, y);
                 RetCount++;
             }
         }
@@ -95,7 +95,7 @@ namespace Kincskereso
             return type == 5 ? 4 : type;
         }
 
-        public Grid GetNewGrid(int type, int x, int y)
+        public Grid GetNewGrid(TileType type, int x, int y)
         {
             var gr = new Grid();
             gr.PreviewMouseLeftButtonDown += GridClick;
@@ -105,11 +105,11 @@ namespace Kincskereso
             return gr;
         }
 
-        public Grid AddNewGrid(int type, int x, int y)
+        public Grid AddNewGrid(TileType type, int x, int y)
         {
             var gr = GetNewGrid(type, x, y);
             tiles[x, y] = new Tile(type);
-            gr.Background = tileBrushes[(TileType)type];
+            gr.Background = tileBrushes[type];
             var t = Board.Children.Cast<UIElement>().FirstOrDefault(elem => Grid.GetColumn(elem) == x && Grid.GetRow(elem) == y);
             if (t != null)
             {
@@ -127,7 +127,7 @@ namespace Kincskereso
             MessageBox.Show((roll + 1).ToString());
             Image img = new Image();
             img.Source = new BitmapImage(new Uri($"dice/{roll + 1}.png", UriKind.Relative));
-            dice.Content = img;
+            //dice.Content = img;
 
         }
     }
