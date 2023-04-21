@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
 
 namespace Kincskereso
 {
@@ -22,6 +23,8 @@ namespace Kincskereso
     {
         Tile[,] tiles;
 
+        Grid[,] grids;
+
         Dictionary<TileType, SolidColorBrush> tileBrushes = new()
         {
             [TileType.Sarok] = Brushes.Yellow,
@@ -31,6 +34,8 @@ namespace Kincskereso
             [TileType.Erdo] = Brushes.DarkGreen
         };
 
+        Player player;
+
         internal bool GameStarted;
 
         internal static Random randomGenerator = new();
@@ -38,10 +43,12 @@ namespace Kincskereso
         {
             InitializeComponent();
             Feltolt();
+            
         }
         void Feltolt()
         {
             tiles = new Tile[8, 8];
+            grids = new Grid[8, 8];
             AddNewGrid(TileType.Sarok, 0, 0);
             AddNewGrid(TileType.Sarok, 7, 0);
             AddNewGrid(TileType.Sarok, 7, 7);
@@ -88,6 +95,22 @@ namespace Kincskereso
 
         public void GridClick(object obj, MouseButtonEventArgs e)
         {
+            if (obj == null)
+            {
+                return;
+            }
+            Grid gr = (Grid)obj;
+            int x = Grid.GetColumn(gr);
+            int y = Grid.GetRow(gr);
+            if (!GameStarted)
+            {
+                if (!((x == 0 || x == 7) && (y == 0 || y == 7)))
+                {
+                    return;
+                }
+                player = new Player(new System.Drawing.Point(x, y));
+                GameStarted = true;
+            }
             MessageBox.Show("asd");
         }
 
@@ -144,10 +167,11 @@ namespace Kincskereso
                 Board.Children.Remove(t);
             }
             Board.Children.Add(gr);
+            grids[x, y] = gr;
             return gr;
         }
 
-        private void Dice()
+        private void Dice(object obj, RoutedEventArgs e)
         {
             Random rnd = new Random();
             int roll = rnd.Next(6);

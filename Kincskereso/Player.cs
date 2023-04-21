@@ -17,7 +17,7 @@ namespace Kincskereso
         public int Kincsekcsount { get; set; }
         public int Lepescount{ get; set; }
 
-        public Player()
+        public Player(Point pos)
         {
             traversed = new bool[5];
         }
