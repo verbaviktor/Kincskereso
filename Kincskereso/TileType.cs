@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Kincskereso
 {
-    internal enum TileType
+    public enum TileType
     {
         Sarok = 0, //Sárga
         Ret = 1, //V. zöld
         Domb = 2, //Barna
         Hegy = 3, //Szürke
-        Erdő = 4, //S. zöld
+        Erdo = 4, //S. zöl
     }
 }
