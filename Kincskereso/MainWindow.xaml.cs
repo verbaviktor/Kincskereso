@@ -147,7 +147,7 @@ namespace Kincskereso
             return gr;
         }
 
-        private void Dice()
+        private void Dice(object obj, RoutedEventArgs e)
         {
             Random rnd = new Random();
             int roll = rnd.Next(6);
