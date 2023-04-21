@@ -99,6 +99,32 @@ namespace Kincskereso
         {
             var gr = new Grid();
             gr.PreviewMouseLeftButtonDown += GridClick;
+            for (int i = 0; i < 3; i++)
+            {
+                gr.ColumnDefinitions.Add(new());
+                gr.RowDefinitions.Add(new());
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (!((i == 0 || i == 2) && (j == 0 || j == 2)))
+                    {
+                        var t2 = new Grid();
+                        Grid.SetColumn(t2, i);
+                        Grid.SetRow(t2, j);
+                        gr.Children.Add(t2);
+                        t2.Children.Add(new TextBlock
+                        {
+                            Text = "",
+                            TextAlignment = TextAlignment.Center,
+                            FontSize = 10,
+                            VerticalAlignment = VerticalAlignment.Center,
+                            HorizontalAlignment = HorizontalAlignment.Center
+                        });
+                    }
+                }
+            }
             Grid.SetColumn(gr, x);
             Grid.SetRow(gr, y);
             gr.Tag = type;
@@ -127,7 +153,7 @@ namespace Kincskereso
             MessageBox.Show((roll + 1).ToString());
             Image img = new Image();
             img.Source = new BitmapImage(new Uri($"dice/{roll + 1}.png", UriKind.Relative));
-            dice.Content = img;
+            //dice.Content = img;
 
         }
     }
