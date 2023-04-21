@@ -118,5 +118,17 @@ namespace Kincskereso
             Board.Children.Add(gr);
             return gr;
         }
+
+        private void Dice()
+        {
+            Random rnd = new Random();
+            int roll = rnd.Next(6);
+
+            MessageBox.Show((roll + 1).ToString());
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri($"dice/{roll + 1}.png", UriKind.Relative));
+            dice.Content = img;
+
+        }
     }
 }
