@@ -61,13 +61,20 @@
             </Grid>
        
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel  Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Grid.Column="1" Content="Erdő" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0 0 20 0"/>
-                <Label Grid.Column="1" Content="Hegy" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
-                <Label Grid.Column="1" Content="Rét" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
-                <Label Grid.Column="1" Content="Domb" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
-                <Label Grid.Column="1" Content="Homok" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" Width="430">
+                <Label Content="Erdő:" FontSize="18" FontWeight="Bold"/>
+                <Rectangle Width="15" Height="15" Fill="#124a09" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.455,0.51"/>
+                <Label Margin="10 0 0 0" Content="Hegy:" FontSize="18" FontWeight="Bold"/>
+                <Rectangle Width="15" Height="15" Fill="#71b097" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.455,0.51"/>
+                <Label Margin="10 0 0 0" Content="Rét:" FontSize="18" FontWeight="Bold"/>
+                <Rectangle Width="15" Height="15" Fill="#b3ff40" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.455,0.51"/>
+
+                <Label Margin="10 0 0 0" Content="Domb:" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.632,0.536"/>
+                <Rectangle Width="15" Height="15" Fill="#691804" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.455,0.51"/>
+                <Label Margin="10 0 0 0" Grid.Column="1" Content="Homok:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+                <Rectangle Width="15" Height="15" Fill="#f2f26f" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.455,0.51"/>
             </StackPanel>
+
         </StackPanel>
 
         <Grid x:Name="controls" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,22,440,22" Grid.RowSpan="2">
