@@ -96,33 +96,33 @@
                     <DropShadowEffect/>
                 </Image.Effect>
             </Image>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="faLabel" Foreground="White" FontSize="70" Content="" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/iron-ore.png" Grid.Row="0" Grid.Column="1"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label  x:Name="vasLabel" Foreground="White" FontSize="70" Content="" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
             <Image Source="/clay.png" Grid.Row="0" Grid.Column="2"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding Asocount}" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label x:Name="agyagLabel" Foreground="White" FontSize="70" Content="" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
             <Image Source="/bridge.png" Grid.Row="1" Grid.Column="0" Stretch="Uniform"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding Utcount}" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label Foreground="White" FontSize="70" Content="{Binding Utcount}" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
             <Image Source="/spade.png" Grid.Row="1" Grid.Column="1"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label Foreground="White" FontSize="70" Content="{Binding Asocount}" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
             <Image Source="/treasureChest.png" Grid.Row="2" Grid.Column="0"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding Kincsekcsount}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label Foreground="White" FontSize="70" Content="{Binding Kincsekcsount}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>

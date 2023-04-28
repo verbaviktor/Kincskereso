@@ -285,6 +285,7 @@ namespace Kincskereso
                         MessageBox.Show("diggie diggie hole");
                         player.Asocount--;
                         dugTreasure[x, y] = true;
+                        player.Kincsekcsount++;
                         player.anyagok.Add_resource(TileType.Ret);
                     }
                     break;
