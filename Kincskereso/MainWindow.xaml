@@ -15,34 +15,36 @@
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="62*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid x:Name="Board" Background="Black" Grid.Column="1" Grid.Row="1" Margin="50,109,50,108">
+        <Grid x:Name="Board" Background="Black" Grid.Column="1" Grid.Row="1" Margin="50,109,50,108" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
         </Grid>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <Label Grid.Column="1" Content="Erdő" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
-            <Label Grid.Column="1" Content="Hegy" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
-            <Label Grid.Column="1" Content="Rét" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
-            <Label Grid.Column="1" Content="Domb" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
-            <Label Grid.Column="1" Content="Homok" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel  Orientation="Horizontal" VerticalAlignment="Center">
+            <Label Grid.Column="1" Content="Erdő" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0 0 20 0"/>
+            <Label Grid.Column="1" Content="Hegy" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
+            <Label Grid.Column="1" Content="Rét" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
+            <Label Grid.Column="1" Content="Domb" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"  Margin="0 0 20 0"/>
+            <Label Grid.Column="1" Content="Homok" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        </StackPanel>
         </StackPanel>
         <Label Content="" x:Name="msg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Grid x:Name="controls" Grid.Column="0" Grid.Row="1">
@@ -57,21 +59,20 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Image Source="/wood-background-.png" Grid.Row="0" Grid.Column="0" Stretch="Fill"/>
-            <Label Content="{Binding}" Grid.Row="0" Grid.Column="0"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/iron.jpg" Grid.Row="0" Grid.Column="1" Stretch="Fill"/>
-            <Label Content="{Binding}" Grid.Row="0" Grid.Column="1"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/clay-.png" Grid.Row="0" Grid.Column="2" Stretch="Fill"/>
-            <Label Content="{Binding}" Grid.Row="0" Grid.Column="2"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/road.png" Grid.Row="1" Grid.Column="0" Stretch="Uniform"/>
-            <Label Content="{Binding}" Grid.Row="1" Grid.Column="0"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="/shovel.png" Grid.Row="1" Grid.Column="1"/>
-            <Label Content="{Binding}" Grid.Row="1" Grid.Column="1"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Image Source="trasure chest.png" Grid.Row="2" Grid.Column="0"/>
-            <Label Content="{Binding}" Grid.Row="2" Grid.Column="0"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Label Content="Lépések" Grid.Row="2" Grid.Column="1"/>
-            <Label Content="{Binding}" Grid.Row="2" Grid.Column="1"/>
+            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Button x:Name="dice" Click="Dice" Grid.Row="2" Grid.Column="2" Background="Transparent">
-                <Image Source=""/>
             </Button>
         </Grid>
     </Grid>
