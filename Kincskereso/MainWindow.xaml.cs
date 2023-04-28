@@ -43,7 +43,7 @@ namespace Kincskereso
         {
             InitializeComponent();
             Feltolt();
-            
+
         }
         void Feltolt()
         {
@@ -109,6 +109,10 @@ namespace Kincskereso
                     return;
                 }
                 player = new Player(new System.Drawing.Point(x, y));
+                DataContext=player;
+                faLabel.Content = player.anyagok.resources[TileType.Erdo];
+                vasLabel.Content = player.anyagok.resources[TileType.Hegy];
+                agyagLabel.Content = player.anyagok.resources[TileType.Domb];   
                 GameStarted = true;
             }
             MessageBox.Show("asd");
