@@ -94,7 +94,7 @@ namespace Kincskereso
         {
             InitializeComponent();
             Feltolt();
-            
+
         }
         void Feltolt()
         {
@@ -174,7 +174,7 @@ namespace Kincskereso
                     DisplayMessage.Text = "Ez nem egy sarok!";
                     return;
                 }
-                player = new Player(new System.Drawing.Point(x, y));
+                player = new Player(new System.Drawing.Point(x, y)); 
                 GameStarted = true;
                 goalPosition = new System.Drawing.Point((x == 0 ? 7 : 0), (y == 0 ? 7 : 0));
                 GetTextFromBoard(player.Position, Directions.Middle).Text = "X";
