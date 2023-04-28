@@ -9,11 +9,10 @@
 
   <ItemGroup>
     <None Remove="bridge.png" />
-    <None Remove="clay-.png" />
     <None Remove="clay.png" />
     <None Remove="compass.png" />
+    <None Remove="footprint.png" />
     <None Remove="iron-ore.png" />
-    <None Remove="road.png" />
     <None Remove="spade.png" />
     <None Remove="treasureChest.png" />
     <None Remove="wood.png" />
@@ -23,19 +22,16 @@
     <Resource Include="bridge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="clay-.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="clay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="compass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="iron-ore.png">
+    <Resource Include="footprint.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="road.png">
+    <Resource Include="iron-ore.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="spade.png">
