@@ -9,6 +9,7 @@ namespace Kincskereso
     public class Tile
     {
         public TileType Type;
+        //Left, up, right, down
         public bool[] Direction = new bool[4];
 
         public Tile(TileType type)
