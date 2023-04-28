@@ -19,10 +19,12 @@ namespace Kincskereso
                 {TileType.Hegy, 3 },
                 {TileType.Domb, 3 },
                 {TileType.Ret, 0 },
+                {TileType.Sarok, 0 },
             };
         }
 
         public bool Add_resource(TileType type) {
+            
             
             resources[type] += 1;
 

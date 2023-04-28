@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kincskereso"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize">
+        Title="MainWindow" Height="620" Width="900" ResizeMode="NoResize">
     <Grid x:Name="mainGrid" Height="600" Width="900">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -72,8 +72,11 @@
             <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Label Content="Lépések" Grid.Row="2" Grid.Column="1"/>
             <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button x:Name="dice" Click="Dice" Grid.Row="2" Grid.Column="2" Background="Transparent">
-            </Button>
+            <Grid Grid.Row="2" Grid.Column="2">
+
+                <Image x:Name="diceImg" Source="img/dice/dice1.png" Width="100" Height="100"/>
+                <Button x:Name="dice" Click="Dice" Background="Transparent" BorderBrush="Transparent" Width="100" Height="100"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

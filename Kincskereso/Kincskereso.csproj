@@ -11,6 +11,12 @@
     <None Remove="clay-.png" />
     <None Remove="highway.jpg" />
     <None Remove="img\clay-.png" />
+    <None Remove="img\dice\dice1.png" />
+    <None Remove="img\dice\dice2.png" />
+    <None Remove="img\dice\dice3.png" />
+    <None Remove="img\dice\dice4.png" />
+    <None Remove="img\dice\dice5.png" />
+    <None Remove="img\dice\dice6.png" />
     <None Remove="img\iron.jpg" />
     <None Remove="img\shovel.png" />
     <None Remove="img\trasure chest.png" />
@@ -27,6 +33,12 @@
     <Resource Include="img\clay-.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\dice\dice1.png" />
+    <Resource Include="img\dice\dice2.png" />
+    <Resource Include="img\dice\dice3.png" />
+    <Resource Include="img\dice\dice4.png" />
+    <Resource Include="img\dice\dice5.png" />
+    <Resource Include="img\dice\dice6.png" />
     <Resource Include="img\iron.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -46,6 +58,10 @@
     <Resource Include="shovel.png" />
     <Resource Include="trasure chest.png" />
     <Resource Include="wood-background-.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="img\NewFolder\" />
   </ItemGroup>
 
 </Project>

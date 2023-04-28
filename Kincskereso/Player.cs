@@ -20,6 +20,7 @@ namespace Kincskereso
 
         public Player(Point pos)
         {
+            Position = pos;
             traversed = new bool[5];
             anyagok = new Resources();
         }
