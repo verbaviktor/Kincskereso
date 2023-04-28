@@ -130,7 +130,7 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Label Foreground="White" FontSize="100" Content="2" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Label Foreground="White" FontSize="100" Content="" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1"/>
