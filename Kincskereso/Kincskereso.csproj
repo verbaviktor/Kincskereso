@@ -8,44 +8,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="bridge.png" />
     <None Remove="clay-.png" />
-    <None Remove="highway.jpg" />
-    <None Remove="img\clay-.png" />
-    <None Remove="img\iron.jpg" />
-    <None Remove="img\shovel.png" />
-    <None Remove="img\trasure chest.png" />
-    <None Remove="img\wood-background-.png" />
-    <None Remove="iron.jpg" />
+    <None Remove="clay.png" />
+    <None Remove="compass.png" />
+    <None Remove="iron-ore.png" />
     <None Remove="road.png" />
-    <None Remove="shovel.png" />
-    <None Remove="trasure chest.png" />
-    <None Remove="wood-background-.png" />
+    <None Remove="spade.png" />
+    <None Remove="treasureChest.png" />
+    <None Remove="wood.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="clay-.png" />
-    <Resource Include="img\clay-.png">
+    <Resource Include="bridge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\iron.jpg">
+    <Resource Include="clay-.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\shovel.png">
+    <Resource Include="clay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\trasure chest.png">
+    <Resource Include="compass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\wood-background-.png">
+    <Resource Include="iron-ore.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="iron.jpg" />
     <Resource Include="road.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="shovel.png" />
-    <Resource Include="trasure chest.png" />
-    <Resource Include="wood-background-.png" />
+    <Resource Include="spade.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="treasureChest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
