@@ -36,11 +36,11 @@ namespace Kincskereso
 
         Dictionary<TileType, SolidColorBrush> tileBrushes = new()
         {
-            [TileType.Sarok] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#f2f26f")),
-            [TileType.Ret] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#59eb1b")),
-            [TileType.Domb] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#691804")),
-            [TileType.Hegy] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#71b097")),
-            [TileType.Erdo] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#124a09"))
+            [TileType.Sarok] = Brushes.Yellow,
+            [TileType.Ret] = Brushes.LightGreen,
+            [TileType.Domb] = Brushes.SaddleBrown,
+            [TileType.Hegy] = Brushes.Gray,
+            [TileType.Erdo] = Brushes.DarkGreen
         };
 
         Player player;

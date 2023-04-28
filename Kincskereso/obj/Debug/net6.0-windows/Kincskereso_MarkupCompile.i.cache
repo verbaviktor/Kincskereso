@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\
+C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\
 Kincskereso
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-Z:\projekt feladat_ikt\Kincskereso\Kincskereso\App.xaml
+C:\Users\pecsi.balint\source\repos\Kincskereso\Kincskereso\App.xaml
 11407045341
 
 10694981767
 194-200944676
 MainWindow.xaml;
 
-True
+False
 
