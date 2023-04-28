@@ -33,9 +33,9 @@
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="62*"></RowDefinition>
         </Grid.RowDefinitions>
-        
 
-            <Grid x:Name="Board" Background="Black" Grid.Column="1" Grid.Row="1" Margin="50,109,50,108" >
+
+        <Grid x:Name="Board" Background="Black" Grid.Column="1" Grid.Row="1" Margin="50,109,50,108" >
             <Grid.Effect>
                 <DropShadowEffect/>
             </Grid.Effect>
@@ -59,10 +59,10 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
 
         </Grid>
-       
+
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" Width="430">
                 <Label Content="Erdő:" FontSize="18" FontWeight="Bold"/>
@@ -82,52 +82,60 @@
 
         <Grid x:Name="controls" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,22,440,22" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="17*"></ColumnDefinition>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="150*"></ColumnDefinition>
+                <ColumnDefinition Width="150*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="/wood.png" Grid.Row="0" Grid.Column="0">
+
+
+
+            <Image Source="/wood.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <Image.Effect>
                     <DropShadowEffect/>
                 </Image.Effect>
             </Image>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Image Source="/iron-ore.png" Grid.Row="0" Grid.Column="1"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
-            </Label>
-            <Image Source="/clay.png" Grid.Row="0" Grid.Column="2"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
-            </Label>
-            <Image Source="/bridge.png" Grid.Row="1" Grid.Column="0" Stretch="Uniform"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
-            </Label>
-            <Image Source="/spade.png" Grid.Row="1" Grid.Column="1"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
-            </Label>
-            <Image Source="/treasureChest.png" Grid.Row="2" Grid.Column="0"/>
-            <Label Foreground="White" FontSize="100" Content="{Binding}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
-            </Label>
-            <Image Source="/footprint.png" Grid.Row="2" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+
+            <Label x:Name="WoodDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+
+            <Image Source="/iron-ore.png" Grid.Row="0" Grid.Column="2"/>
+            <Label x:Name="OreDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
+
+
+
+            <Image Source="/clay.png" Grid.Row="0" Grid.Column="3"/>
+            <Label x:Name="ClayDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Row="0" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
+
+
+            <Image Source="/bridge.png" Grid.Column="0" Stretch="Uniform" Grid.ColumnSpan="2" Margin="0,185,0,185" Grid.RowSpan="3"/>
+            <Label x:Name="BridgeDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="0,185,0,185" Grid.RowSpan="3" PreviewMouseLeftButtonDown="MakeRoad"/>
+
+
+
+
+            <Image Source="/spade.png" Grid.Column="2" Margin="0,185,0,185" Grid.RowSpan="3"/>
+            <Label x:Name="ShovelDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,185,0,185" Grid.RowSpan="3" PreviewMouseLeftButtonDown="MakeShovel"/>
+
+
+
+
+            <Image Source="/treasureChest.png" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Label x:Name="TreasureDisplay" Foreground="White" FontSize="50" Content="{Binding}" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+
+
+
+            <Image Source="/footprint.png" Grid.Row="2" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -137,21 +145,19 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Label Foreground="White" FontSize="100" Content="" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
-            <Grid Grid.Row="2" Grid.Column="2">
+
+            <Label x:Name="StepDisplay" Foreground="White" FontSize="50" Content="" Grid.Row="2" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,108,0,0"/>
+
+
+            <Grid Grid.Row="2" Grid.Column="3">
 
                 <Image x:Name="diceImg" Source="img/dice/dice1.png" Width="100" Height="100"/>
                 <Button x:Name="dice" Click="Dice" Background="Transparent" BorderBrush="Transparent" Width="100" Height="100"/>
             </Grid>
         </Grid>
+
+        <TextBlock x:Name="DisplayMessage"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">
+            Válassz egy kezdő sarkot!
+        </TextBlock>
     </Grid>
 </Window>

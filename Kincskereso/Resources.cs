@@ -24,8 +24,7 @@ namespace Kincskereso
         }
 
         public bool Add_resource(TileType type) {
-            
-            
+
             resources[type] += 1;
 
             return true;

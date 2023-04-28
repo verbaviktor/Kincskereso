@@ -145,8 +145,21 @@ namespace Kincskereso
             }
         }
 
+        public void UpdateDisplay()
+        {
+            WoodDisplay.Content = player.anyagok.resources[TileType.Erdo];
+            OreDisplay.Content = player.anyagok.resources[TileType.Hegy];
+            ClayDisplay.Content = player.anyagok.resources[TileType.Domb];
+            TreasureDisplay.Content = player.anyagok.resources[TileType.Ret];
+            ShovelDisplay.Content = player.Asocount;
+            BridgeDisplay.Content = player.Utcount;
+            StepDisplay.Content = player.Lepescount;
+        }
+
         public void GridClick(object obj, MouseButtonEventArgs e)
         {
+
+            DisplayMessage.Text = "";
             if (obj == null)
             {
                 return;
@@ -158,19 +171,23 @@ namespace Kincskereso
             {
                 if (!((x == 0 || x == 7) && (y == 0 || y == 7)))
                 {
+                    DisplayMessage.Text = "Ez nem egy sarok!";
                     return;
                 }
                 player = new Player(new System.Drawing.Point(x, y));
                 GameStarted = true;
                 goalPosition = new System.Drawing.Point((x == 0 ? 7 : 0), (y == 0 ? 7 : 0));
                 GetTextFromBoard(player.Position, Directions.Middle).Text = "X";
-                player.Utcount = 300;
-                player.Asocount = 100;
+                player.Utcount = 0;
+                player.Asocount = 0;
                 player.Lepescount = 0;
                 movedSinceThrow = false;
+
+                UpdateDisplay();
                 return;
             }
 
+            UpdateDisplay();
             var moveX = player.Position.X - x;
             var absX = Math.Abs(moveX);
             var moveY = player.Position.Y - y;
@@ -178,6 +195,7 @@ namespace Kincskereso
 
             if (absX > 1 || absY > 1 || absX == absY)
             {
+                DisplayMessage.Text = "Ez a lépés érvénytelen!";
                 return;
             }
             switch (moveX)
@@ -188,8 +206,10 @@ namespace Kincskereso
                     {
                         if (player.Utcount < 1)
                         {
+                            DisplayMessage.Text = "Nincsen utad!";
                             return;
                         }
+                        movedSinceThrow = true;
                         GetTextFromBoard(player.Position, Directions.Left).Text = stringX;
                         player.Utcount -= 1;
                     }
@@ -199,8 +219,10 @@ namespace Kincskereso
                     {
                         if (player.Utcount < 1)
                         {
+                            DisplayMessage.Text = "Nincsen utad!";
                             return;
                         }
+                        movedSinceThrow = true;
                         GetTextFromBoard(player.Position, Directions.Right).Text = stringX;
                         player.Utcount -= 1;
                     }
@@ -213,8 +235,10 @@ namespace Kincskereso
                             {
                                 if (player.Utcount < 1)
                                 {
+                                    DisplayMessage.Text = "Nincsen utad!";
                                     return;
                                 }
+                                movedSinceThrow = true;
                                 GetTextFromBoard(player.Position, Directions.Up).Text = stringY;
                                 player.Utcount -= 1;
                             }
@@ -224,8 +248,10 @@ namespace Kincskereso
                             {
                                 if (player.Utcount < 1)
                                 {
+                                    DisplayMessage.Text = "Nincsen utad!";
                                     return;
                                 }
+                                movedSinceThrow = true;
                                 GetTextFromBoard(player.Position, Directions.Down).Text = stringY;
                                 player.Utcount -= 1;
                             }
@@ -235,8 +261,6 @@ namespace Kincskereso
                     };
                     break;
             }
-            movedSinceThrow = true;
-            player.Lepescount++;
             GetTextFromBoard(player.Position, Directions.Middle).Text = "";
             player.Position = new System.Drawing.Point(x, y);
             GetTextFromBoard(player.Position, Directions.Middle).Text = "X";
@@ -257,19 +281,21 @@ namespace Kincskereso
                         case -1:
                             GetTextFromBoard(player.Position, Directions.Up).Text = stringY;
                             break;
-                        default:
-                            return;
                     };
                     break;
             }
 
+            UpdateDisplay();
+
+
+            DisplayMessage.Text = "";
             player.traversed[(int)tiles[x, y].Type] = true;
             switch (tiles[x, y].Type)
             {
                 case TileType.Sarok:
                     if (player.Position == goalPosition && player.anyagok.resources[TileType.Ret] >= 6)
                     {
-                        MessageBox.Show("You win");
+                        MessageBox.Show("Nyertél!");
                         (new MainWindow()).Show();
                         this.Close();
                         return;
@@ -278,7 +304,7 @@ namespace Kincskereso
                 case TileType.Ret:
                     if (!dugTreasure[x, y] && player.Asocount > 0)
                     {
-                        MessageBox.Show("diggie diggie hole");
+                        DisplayMessage.Text = "Kaptál egy kincset!";
                         player.Asocount--;
                         dugTreasure[x, y] = true;
                         player.anyagok.Add_resource(TileType.Ret);
@@ -294,6 +320,16 @@ namespace Kincskereso
                     break;
             }
 
+
+            UpdateDisplay();
+
+            if (isImpossible)
+            {
+                MessageBox.Show("Na ez az állás menthetetlen!");
+                (new MainWindow()).Show();
+                this.Close();
+                return;
+            }
 
 
         }
@@ -355,7 +391,11 @@ namespace Kincskereso
         {
             if (!movedSinceThrow)
             {
-                return;
+                if (canMoveToNew)
+                {
+                    DisplayMessage.Text = "Nem dobhatsz most, előbb lépj!";
+                    return;
+                }
             }
             movedSinceThrow = false;
             player.Lepescount++;
@@ -365,23 +405,17 @@ namespace Kincskereso
             roll = roll == 5 ? 4 : roll;
             if (!player.traversed[roll])
             {
+                DisplayMessage.Text = "Sajnos ez a dobás nem nyert!";
                 return;
             };
             player.anyagok.Add_resource((TileType)roll);
 
             //player.anyagok.resources
 
-            string s = null!;
+            DisplayMessage.Text = "";
 
-            for (int i = 0; i < 5; i++)
-            {
-                s += $"{player.anyagok.resources[(TileType)i]}\n";
-            }
-            s += $"lép: {player.Lepescount}\n";
-            s += $"ásó: {player.Asocount}\n";
-            s += $"út: {player.Utcount}\n";
-            MessageBox.Show(s);
 
+            UpdateDisplay();
             //dice.Content = img;
 
         }
@@ -403,6 +437,35 @@ namespace Kincskereso
         {
             var gr1 = GetPointFromGrid(playerPosition, Board);
             return (TextBlock)GetPointFromGrid(direction, (Grid)gr1);
+        }
+
+        private void MakeRoad(object sender, MouseButtonEventArgs e)
+        {
+            if (player.anyagok.resources[TileType.Erdo] < 1 || player.anyagok.resources[TileType.Domb] < 1)
+            {
+                DisplayMessage.Text = "Nincs elég anyagod!";
+            }
+
+            player.anyagok.Remove_resource(TileType.Erdo);
+            player.anyagok.Remove_resource(TileType.Domb);
+            player.Utcount++;
+
+            UpdateDisplay();
+        }
+
+        private void MakeShovel(object sender, MouseButtonEventArgs e)
+        {
+
+            if (player.anyagok.resources[TileType.Erdo] < 1 || player.anyagok.resources[TileType.Hegy] < 1)
+            {
+                DisplayMessage.Text = "Nincs elég anyagod!";
+            }
+
+            player.anyagok.Remove_resource(TileType.Erdo);
+            player.anyagok.Remove_resource(TileType.Hegy);
+            player.Asocount++;
+
+            UpdateDisplay();
         }
     }
 }
