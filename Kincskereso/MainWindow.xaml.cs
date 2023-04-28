@@ -13,25 +13,76 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using System.IO;
 
 namespace Kincskereso
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    public static class Directions
+    {
+        public static System.Drawing.Point Up = new System.Drawing.Point(1, 0);
+        public static System.Drawing.Point Down = new System.Drawing.Point(1, 2);
+        public static System.Drawing.Point Left = new System.Drawing.Point(0, 1);
+        public static System.Drawing.Point Right = new System.Drawing.Point(2, 1);
+        public static System.Drawing.Point Middle = new System.Drawing.Point(1, 1);
+    }
     public partial class MainWindow : Window
     {
+        const string stringX = "—";
+        const string stringY = "|";
+
+        bool movedSinceThrow = false;
+
+        bool canMoveToNew
+        {
+            get
+            {
+                if (player.Utcount > 0)
+                {
+                    return true;
+                }
+                if (player.anyagok.resources[TileType.Domb] > 0 && player.anyagok.resources[TileType.Erdo] > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        bool isImpossible
+        {
+            get
+            {
+                if (player.traversed[(int)TileType.Erdo] && player.traversed[(int)TileType.Domb])
+                {
+                    return false;
+                }
+                if (canMoveToNew)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        System.Drawing.Point goalPosition;
+
         Tile[,] tiles;
+
+        bool[,] dugTreasure;
 
         Grid[,] grids;
 
         Dictionary<TileType, SolidColorBrush> tileBrushes = new()
         {
-            [TileType.Sarok] = Brushes.Yellow,
-            [TileType.Ret] = Brushes.LightGreen,
-            [TileType.Domb] = Brushes.SaddleBrown,
-            [TileType.Hegy] = Brushes.Gray,
-            [TileType.Erdo] = Brushes.DarkGreen
+
+            [TileType.Sarok] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#f2f26f")),
+            [TileType.Ret] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#59eb1b")),
+            [TileType.Domb] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#691804")),
+            [TileType.Hegy] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#71b097")),
+            [TileType.Erdo] = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#124a09"))
         };
 
         Player player;
@@ -49,6 +100,7 @@ namespace Kincskereso
         {
             tiles = new Tile[8, 8];
             grids = new Grid[8, 8];
+            dugTreasure = new bool[8, 8];
             AddNewGrid(TileType.Sarok, 0, 0);
             AddNewGrid(TileType.Sarok, 7, 0);
             AddNewGrid(TileType.Sarok, 7, 7);
@@ -114,8 +166,140 @@ namespace Kincskereso
                 vasLabel.Content = player.anyagok.resources[TileType.Hegy];
                 agyagLabel.Content = player.anyagok.resources[TileType.Domb];   
                 GameStarted = true;
+                goalPosition = new System.Drawing.Point((x == 0 ? 7 : 0), (y == 0 ? 7 : 0));
+                GetTextFromBoard(player.Position, Directions.Middle).Text = "X";
+                player.Utcount = 300;
+                player.Asocount = 100;
+                player.Lepescount = 0;
+                movedSinceThrow = false;
+                return;
             }
-            MessageBox.Show("asd");
+
+            var moveX = player.Position.X - x;
+            var absX = Math.Abs(moveX);
+            var moveY = player.Position.Y - y;
+            var absY = Math.Abs(moveY);
+
+            if (absX > 1 || absY > 1 || absX == absY)
+            {
+                return;
+            }
+            switch (moveX)
+            {
+                case 1:
+
+                    if (GetTextFromBoard(player.Position, Directions.Left).Text != stringX)
+                    {
+                        if (player.Utcount < 1)
+                        {
+                            return;
+                        }
+                        GetTextFromBoard(player.Position, Directions.Left).Text = stringX;
+                        player.Utcount -= 1;
+                    }
+                    break;
+                case -1:
+                    if (GetTextFromBoard(player.Position, Directions.Right).Text != stringX)
+                    {
+                        if (player.Utcount < 1)
+                        {
+                            return;
+                        }
+                        GetTextFromBoard(player.Position, Directions.Right).Text = stringX;
+                        player.Utcount -= 1;
+                    }
+                    break;
+                default:
+                    switch (moveY)
+                    {
+                        case 1:
+                            if (GetTextFromBoard(player.Position, Directions.Up).Text != stringY)
+                            {
+                                if (player.Utcount < 1)
+                                {
+                                    return;
+                                }
+                                GetTextFromBoard(player.Position, Directions.Up).Text = stringY;
+                                player.Utcount -= 1;
+                            }
+                            break;
+                        case -1:
+                            if (GetTextFromBoard(player.Position, Directions.Down).Text != stringY)
+                            {
+                                if (player.Utcount < 1)
+                                {
+                                    return;
+                                }
+                                GetTextFromBoard(player.Position, Directions.Down).Text = stringY;
+                                player.Utcount -= 1;
+                            }
+                            break;
+                        default:
+                            return;
+                    };
+                    break;
+            }
+            movedSinceThrow = true;
+            player.Lepescount++;
+            GetTextFromBoard(player.Position, Directions.Middle).Text = "";
+            player.Position = new System.Drawing.Point(x, y);
+            GetTextFromBoard(player.Position, Directions.Middle).Text = "X";
+            switch (moveX)
+            {
+                case 1:
+                    GetTextFromBoard(player.Position, Directions.Right).Text = stringX;
+                    break;
+                case -1:
+                    GetTextFromBoard(player.Position, Directions.Left).Text = stringX;
+                    break;
+                default:
+                    switch (moveY)
+                    {
+                        case 1:
+                            GetTextFromBoard(player.Position, Directions.Down).Text = stringY;
+                            break;
+                        case -1:
+                            GetTextFromBoard(player.Position, Directions.Up).Text = stringY;
+                            break;
+                        default:
+                            return;
+                    };
+                    break;
+            }
+
+            player.traversed[(int)tiles[x, y].Type] = true;
+            switch (tiles[x, y].Type)
+            {
+                case TileType.Sarok:
+                    if (player.Position == goalPosition && player.anyagok.resources[TileType.Ret] >= 6)
+                    {
+                        MessageBox.Show("You win");
+                        (new MainWindow()).Show();
+                        this.Close();
+                        return;
+                    };
+                    break;
+                case TileType.Ret:
+                    if (!dugTreasure[x, y] && player.Asocount > 0)
+                    {
+                        MessageBox.Show("diggie diggie hole");
+                        player.Asocount--;
+                        dugTreasure[x, y] = true;
+                        player.anyagok.Add_resource(TileType.Ret);
+                    }
+                    break;
+                case TileType.Domb:
+                    break;
+                case TileType.Hegy:
+                    break;
+                case TileType.Erdo:
+                    break;
+                default:
+                    break;
+            }
+
+
+
         }
 
         public int GetRandomType()
@@ -137,21 +321,17 @@ namespace Kincskereso
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (!((i == 0 || i == 2) && (j == 0 || j == 2)))
+                    var t2 = new TextBlock
                     {
-                        var t2 = new Grid();
-                        Grid.SetColumn(t2, i);
-                        Grid.SetRow(t2, j);
-                        gr.Children.Add(t2);
-                        t2.Children.Add(new TextBlock
-                        {
-                            Text = "",
-                            TextAlignment = TextAlignment.Center,
-                            FontSize = 10,
-                            VerticalAlignment = VerticalAlignment.Center,
-                            HorizontalAlignment = HorizontalAlignment.Center
-                        });
-                    }
+                        Text = "",
+                        TextAlignment = TextAlignment.Center,
+                        FontSize = 10,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    };
+                    Grid.SetColumn(t2, i);
+                    Grid.SetRow(t2, j);
+                    gr.Children.Add(t2);
                 }
             }
             Grid.SetColumn(gr, x);
@@ -177,14 +357,56 @@ namespace Kincskereso
 
         private void Dice(object obj, RoutedEventArgs e)
         {
+            if (!movedSinceThrow)
+            {
+                return;
+            }
+            movedSinceThrow = false;
+            player.Lepescount++;
             Random rnd = new Random();
             int roll = rnd.Next(6);
+            diceImg.Source = new BitmapImage(new Uri($"pack://application:,,,/img/dice/dice{roll + 1}.png"));
+            roll = roll == 5 ? 4 : roll;
+            if (!player.traversed[roll])
+            {
+                return;
+            };
+            player.anyagok.Add_resource((TileType)roll);
 
-            MessageBox.Show((roll + 1).ToString());
-            Image img = new Image();
-            img.Source = new BitmapImage(new Uri($"dice/{roll + 1}.png", UriKind.Relative));
+            //player.anyagok.resources
+
+            string s = null!;
+
+            for (int i = 0; i < 5; i++)
+            {
+                s += $"{player.anyagok.resources[(TileType)i]}\n";
+            }
+            s += $"lép: {player.Lepescount}\n";
+            s += $"ásó: {player.Asocount}\n";
+            s += $"út: {player.Utcount}\n";
+            MessageBox.Show(s);
+
             //dice.Content = img;
 
+        }
+
+        public bool UnpackPoint(System.Drawing.Point p, out int x, out int y)
+        {
+            x = p.X;
+            y = p.Y;
+            return true;
+        }
+
+        private UIElement GetPointFromGrid(System.Drawing.Point p, Grid gr)
+        {
+            UnpackPoint(p, out int x, out int y);
+            return gr.Children.Cast<UIElement>().FirstOrDefault(e => Grid.GetColumn(e) == x && Grid.GetRow(e) == y)!;
+        }
+
+        private TextBlock GetTextFromBoard(System.Drawing.Point playerPosition, System.Drawing.Point direction)
+        {
+            var gr1 = GetPointFromGrid(playerPosition, Board);
+            return (TextBlock)GetPointFromGrid(direction, (Grid)gr1);
         }
     }
 }
