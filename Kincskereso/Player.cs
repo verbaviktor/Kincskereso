@@ -14,7 +14,6 @@ namespace Kincskereso
         public int Utcount{ get; set; }
         public int Asocount { get; set; }
         public bool[] traversed { get; set; }
-        public int Kincsekcsount { get; set; }
         public int Lepescount{ get; set; }
 
         public Resources anyagok { get; set; }
