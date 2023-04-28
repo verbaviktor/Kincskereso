@@ -61,3 +61,24 @@ C:\Users\csizmadia.barnabas\Desktop\Kincskereso\Kincskereso\obj\Debug\net6.0-win
 C:\Users\csizmadia.barnabas\Desktop\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.pdb
 C:\Users\csizmadia.barnabas\Desktop\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.genruntimeconfig.cache
 C:\Users\csizmadia.barnabas\Desktop\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\ref\Kincskereso.dll
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.exe
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.deps.json
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.runtimeconfig.json
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.dll
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\bin\Debug\net6.0-windows\Kincskereso.pdb
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.AssemblyReference.cache
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.g.cs
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\App.g.cs
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.cache
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso_MarkupCompile.lref
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\MainWindow.baml
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.g.resources
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.GeneratedMSBuildEditorConfig.editorconfig
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfoInputs.cache
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.AssemblyInfo.cs
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.csproj.CoreCompileInputs.cache
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.dll
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\refint\Kincskereso.dll
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.pdb
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\Kincskereso.genruntimeconfig.cache
+Z:\projekt feladat_ikt\Kincskereso\Kincskereso\obj\Debug\net6.0-windows\ref\Kincskereso.dll
